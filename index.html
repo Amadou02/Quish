@@ -7,100 +7,113 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title></title>
+    <title>Quish - Gagnez plus pour dépenser plus.</title>
 </head>
 <body class="bgc3">
     <!-- container Bootstrap -->
-    <!-- header -->
     <div class="container-fluid px-0">
-        <header class="sticky-top">
+        <!-- header -->
+        <header class="sticky-top mb-md-2">
             <!-- navbar version mobile -->
             <nav class="d-md-none navbar navbar-dark bgc1">
                 <span>
-                    <button class="d-inline navbar-toggler navbar-toggler-right order-0" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                    <button class="mr-2 d-inline navbar-toggler navbar-toggler-right order-0" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-hamburger txc4"></i>
+                        <i class="fas fa-chevron-down txc4"></i>
                     </button>
-                    <a class="txc3 lead font-weight-bold" href="#!">Quish</a>
+                    <a class="title txc3 lead font-weight-bold" href="#!">
+                        <i class="fas fa-pizza-slice"></i>
+                        Quish
+                    </a>
                 </span>
                 <span>
-                    <a href="#!"><i class="fas fa-search txc3 mx-1"></i></a>
-                    <a href=""><i class="fas fa-shopping-cart txc3 mx-1"></i></a>
+                    <!-- icone search -->
+                    <a href="#!"><i class="grow fas fa-search txc3 mx-1"></i></a>
+                    <!-- icone panier -->
+                    <a href=""><i class="grow iconePanier fas fa-shopping-cart txc3 mx-1"></i></a>
                 </span>
                 <div class="navbar-collapse collapse" id="navbarColor02" style="">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#!">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#!">Maison <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#!">Features</a>
+                            <a class="nav-link" href="#!">Tendances</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#!">Pricing</a>
+                            <a class="nav-link" href="#!">Ventes Flash</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#!">About</a>
+                            <a class="nav-link" href="#!">Express</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!">Consulté récemment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!">Mon profil</a>
                         </li>
                     </ul>
                 </div>
             </nav>
             <!-- navbar version PC -->
-            <nav class="d-none d-md-flex navbar navbar-dark bgc4 shadow-sm">
-                    <a class="txc1 lead font-weight-bold" href="#!">Quish</a>
+            <div class="shadow-sm">
+                <nav class="d-none d-md-flex navbar navbar-dark bgc4 pb-0 mb-0">
+                    <a class="grow title txc1 lead font-weight-bold" href="#!">
+                        <i class="fas fa-pizza-slice"></i>
+                        Quish
+                    </a>
                     <form class="form-inline">
                         <i class="fas fa-search mx-1"></i>
-                       <input class="form-control " type="search" placeholder="Que voulez vous acheter aujourd'hui?" aria-label="Search">
-                       <button class="btn bgc1 my-2 txc4" type="submit">Acheter</button>
-                     </form>
-                     <span>
-                         <i class="far fa-user text-muted"></i>
-                         <small class="mt-3 d-inline">Loraine Jambon</small>
-                     </span>
-                     <span>
-                        <i class="fas fa-bell px-1"></i>
-                        <i class="fas fa-shopping-cart px-1"></i>
-                        <i class="fas fa-heart px-1"></i>
+                        <input class="form-control mx-1" type="search" placeholder="Que voulez vous acheter aujourd'hui?" aria-label="Search">
+                        <button class="btn bgc1 my-2 txc4" type="submit">Acheter</button>
+                    </form>
+                    <span>
+                        <i class="far fa-user text-muted"></i>
+                        <small class="mt-3 d-inline">Loraine Jambon</small>
+                    </span>
+                    <span>
+                        <!-- icone cloche -->
+                        <a href="#!"><i class="grow fas fa-bell px-1"></i></a>
+                        <!-- icone panier -->
+                        <a href="#!"><i class="grow iconePanier fas fa-shopping-cart px-1"></i></a>
+                        <!-- icone coeur -->
+                        <a href="#!"><i class="grow fas fa-heart px-1"></i></a>
                     </span>
                 </span>
-                <div class="navbar-collapse collapse" id="navbarColor02" style="">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#!">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!">About</a>
-                        </li>
-                    </ul>
-                </div>
             </nav>
-        </header>
-        <!-- main -->
-        <div class="container">
-            <main>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            </main>
-            <!-- footer -->
-            <footer>
-
-            </footer>
+            <!-- bas de la nav bar -->
+            <ul class="d-none d-md-flex nav justify-content-center bgc4 pt-0 font-weight-bold">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#!"><i class="far fa-star mr-1"></i>Tendance</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!"><i class="far fa-lightbulb mr-1"></i>Ventes Flash</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!"><i class="fas fa-tachometer-alt mr-1"></i>Express</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!"><i class="far fa-clock mr-1"></i>Consultés récemment</a>
+                </li>
+            </ul>
         </div>
+    </header>
+    <!-- main -->
+    <div class="container">
+        <main>
+
+        </main>
+        <!-- footer -->
+        <footer>
+
+        </footer>
     </div>
-    <!-- scripts JQuery Popper et Bootstrap-->
-    <script src="assets/js/jquery-3.4.0.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- mon script principal -->
-    <script src="assets/js/main.js"></script>
+</div>
+<!-- scripts JQuery Popper et Bootstrap-->
+<script src="assets/js/jquery-3.4.0.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<!-- mon script principal -->
+<script src="assets/js/main.js"></script>
 </body>
 </html>

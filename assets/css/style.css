@@ -37,8 +37,26 @@
 .txc6{
     color: #afc7d1; /*gris*/
 }
-
 /* css seb */
+@font-face {
+    font-family: Montel;
+    src: url('../font/Montel.ttf');
+}
 #navbarSticky .navbar-toggler-icon {
 background-image: url('https://mdbootstrap.com/img/svg/hamburger7.svg?color=fff');
+}
+a{
+    color: inherit;
+}
+a:link{
+    text-decoration: none;
+}
+nav .title{
+    font-family: Montel;
+}
+.grow{
+    transition: .2s ease-in-out;
+}
+.grow:hover{
+    transform: scale(1.2);
 }
