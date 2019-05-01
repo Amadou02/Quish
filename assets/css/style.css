@@ -60,3 +60,9 @@ nav .title{
 .grow:hover{
     transform: scale(1.2);
 }
+#banner{
+     height:158px;
+     background-image: url(../img/banner.jpg);
+     background-position: right;
+     background-size: cover;
+}
