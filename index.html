@@ -62,7 +62,7 @@
                     <form class="form-inline">
                         <i class="fas fa-search mx-1"></i>
                         <input class="form-control mx-1" type="search" placeholder="Que voulez vous acheter aujourd'hui?" aria-label="Search">
-                        <button class="btn bgc1 my-2 txc4" type="submit">Acheter</button>
+                        <button class="btn bgc1 my-2 txc4">Rechercher</button>
                     </form>
                     <span>
                         <i class="far fa-user text-muted"></i>
@@ -109,32 +109,36 @@
             <!-- Modal Panier-->
             <div class="modal" id="modalPanier" tabindex="-1" role="dialog" aria-labelledby="modalPanierLabel" aria-hidden="true">
                 <div class="h-100 modal-dialog modal-dialog-scrollable" role="document">
-                    <div class="modal-content ">
+                    <div class="modal-content bgc3">
                         <div class="modal-body ">
-                            <h3 class="text-center font-weight-bold mb-2">Votre panier</h3>
+                            <h3 class="text-center font-weight-bold">Votre panier</h3>
+                            <hr class="w-50 pb-2">
                             <div class="row mx-2">
-                                <div class="col-7 border">
-                                    <div class="justify-content-center row bgc2">
+                                <div class="col-7">
+                                    <div class="justify-content-center align-content-center row bgc2">
                                         <p>Articles dans votre panier</p>
                                     </div>
-                                    <div id="articlesPanier" class="row shadow">
-                                        <!-- ici on inserera les articles selectionnés -->
+                                    <div class="row">
+                                        <div id="articlesPanier" class="col-12 shadow">
+                                            <!-- ici on inserera les articles selectionnés -->
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-4 offset-1 border">
+                                <div class="col-4 offset-1">
                                     <div class="justify-content-center row bgc2">
                                         <p>Résumé</p>
                                     </div>
-                                    <div id="resumeCommande" class="row">
-                                        <!-- ici on le résumé de la commande -->
+                                    <div class="row">
+                                        <div id="resumeCommande" class="col-12 shadow">
+                                            <!-- ici on le résumé de la commande -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn bgc1 txc4" data-dismiss="modal">
-                                Continuez vos achats
-                            </button>
+                            <button type="button" class="btn bgc1 txc4 shadow" data-dismiss="modal">Commander</button>
+                            <button type="button" class="btn bgc6 txc4 shadow" data-dismiss="modal"><small>Continuez vos achats</small></button>
                         </div>
                     </div>
                 </div>

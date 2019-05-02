@@ -1,3 +1,4 @@
+var totalPrice , articleCount;
 //créé la liste cart qui correspond au contenu du panier
 var cart=[];
 //on créé une liste de tous les articles de la page,
@@ -40,13 +41,13 @@ function addToCart(){
         //i = l'index de l'article que l'on ajoute au panier
         i = searchArticleinArray(article);
         //on verifie si un article similaire est deja dans le panier
-        cartIndex=cart.indexOf(articlesList[i][2]);
+        cartIndex=cart.indexOf(articlesList[i][0]);
         //si c'est le cas on change juste la quantité
         if ( cartIndex !=-1 ){
             cart[ (cartIndex+1) ]++;
         }else{
             //sinon on ajoute une entrée au tableau
-            cart.push(articlesList[i][2]);
+            cart.push(articlesList[i][0]);
             cart.push(1);
         }
         console.log(cart);
@@ -132,24 +133,67 @@ function searchArticleinArray(article){
 };
 //cette fonction met a jour le contenu de la page panier
 function updateCartModal(){
-    //on vide l'affichage du contenu du panier
+    //on vide l'affichage du contenu du panier et du resume de la commande
     $('#articlesPanier').empty();
+    $('#resumeCommande').empty();
     // si le panier est vide on affiche que le panier est vide
     if ( cart.length<1 ){
-        var content='<p class="text-center">Votre panier est vide</p>';
+        var content='<p class="text-center"><br>Votre panier est vide<br><br><br></p>';
         $('#articlesPanier').append(content);
     }else{
+        totalPrice=0;
+        articleCount=0;
         var content='';
-        content+='<ul>';
-        // for (var i=0;i<cart.length;i+=2){
-        //     let tmpArt=searchArticleinArray(cart[i]);
-        //     let tmpName=articlesList[art][2];  //je recupere le nom de l'article
-        //     let tmpPrice=articlesList[art][4];  //je recupere le prix de l'article
-        //     let tmpFinalPrice=articlesList[art][5];  //je recupere le prix final
-        //     let tmpQuantity=cart[i+1];  //je recupere le nombre d'articles
-        //     content+='<li>'+'test'+'</li>';
-        // }
-        // content+='</ul>';
-        $('#articlesPanier').append("<p>bonjour</p>");
+        for (var art=0;art<cart.length;art+=2){
+            console.log(art);
+            //je recupere l'id de l'article en cours et je retrouve sa place dans le tableau des articles
+            tmpArt=searchArticleinArray(cart[art]);
+            let tmpName=articlesList[tmpArt][2];  //je recupere le nom de l'article
+            let tmpPrice=articlesList[tmpArt][4];  //je recupere le prix de l'article
+            let tmpFinalPrice=articlesList[tmpArt][5];  //je recupere le prix final
+            let tmpQuantity=cart[art+1];  //je recupere le nombre d'articles
+            totalPrice+=tmpFinalPrice*tmpQuantity;
+            articleCount+=tmpQuantity;
+            content +=  '<p class="font-weight-bold">'+tmpName+'</p>'
+                        +'<p class="text-right">'
+                            +'<button class="minusButton '+(art+1)+' btn bgc5 txc4">-</button>'
+                            +'<button class="plusButton '+(art+1)+' btn bgc1 txc4">+</button>'
+                            +'Quantité: <b>'+tmpQuantity+'</b>'
+                        +'</p>'
+                        +'<p class="text-right">Prix total: <strike>'+(tmpPrice*tmpQuantity).toFixed(2)+'</strike> <b>'+(tmpFinalPrice*tmpQuantity).toFixed(2)+'€</b></p>'
+                        +'<small class="d-block text-right text-muted font-italic">Vous économisez '+((tmpPrice*tmpQuantity)-(tmpFinalPrice*tmpQuantity)).toFixed(2)+'€</small>'
+        }
+        $('#articlesPanier').append(content);
+        //on s'occupe maintenant de remplir la partie resume de la commande
+        content='<p>Nombre d\'articles dans votre panier:</p>'
+                +'<p class="font-weight-bold text-right">'+articleCount+'</p>'
+                +'<p>Prix total de votre panier:</p>'
+                +'<p id="totalPrice" class="text-right font-weight-bold">'+totalPrice.toFixed(2)+'€</p>'
+                +'<p class="text-muted text-right"><small>Frais de port négociables:<br>Contactez JP et Amadou pour plus d\'infos...</small></p>'
+        $('#resumeCommande').append(content);
     }
+    changeQuantities();
+}
+//cette fonction permet de changer les quantités dans le panier
+function changeQuantities(){
+    //quand je clique sur le bouton MOINS
+    $('.minusButton').click(function(){
+        //je recupere la deuxième classe du bouton (c'est l'id de l'article)
+        let art=$(this).attr('class').split(" ")[1];
+        if ( cart[art] <2 ){
+            if (confirm("Vous êtes sur le point de supprimer cet article de votre panier.\nVous pourriez le regretter.")){
+                cart.splice(art-1,2);
+            }
+        }else{
+            cart[art]--;
+        }
+        updateCartModal();
+    });
+    //quand je clique sur le bouton MOINS
+    $('.plusButton').click(function(){
+        //je recupere la deuxième classe du bouton (c'est l'id de l'article)
+        let art=$(this).attr('class').split(" ")[1];
+        cart[art]++;
+        updateCartModal();
+    });
 }

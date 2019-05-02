@@ -72,3 +72,17 @@ nav .title{
 .article:hover{
     cursor: pointer;
 }
+#articlesPanier p, #resumeCommande p{
+    font-size: .8em;
+    margin-bottom: 0px;
+}
+#articlesPanier button{
+    transform: scale(.7);
+    font-size: 1.2em;
+}
+#totalPrice{
+    font-size: 2em!important;
+}
+.minusButton, .plusButton{
+    font-size: 1.2em!important;
+}
