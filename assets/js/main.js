@@ -8,6 +8,7 @@ $(document).ready(function(){
     createArticlesList();
     createArticleModal();
     switchCategories();
+    updateCartModal();
 });
 //cette fonction cree la liste des articles de la page
 function createArticlesList(){
@@ -46,18 +47,14 @@ function addToCart(){
         }else{
             //sinon on ajoute une entrée au tableau
             cart.push(articlesList[i][2]);
-            cart.push(+1);
+            cart.push(1);
         }
         console.log(cart);
+        updateCartModal();
     })
 };
 //cette fonction fait apparaitre une modale lorsque l'on clique sur un article1
 function createArticleModal(){
-    // lorsque la souris est au dessus d'un article
-    $('.article').hover(function(){
-        //on passe le curseur en pointeur
-        document.body.style.cursor = "pointer";
-    });
     //lorsque l'on clique sur un article de la classe article
     $('.article').click(function(){
         article=$(this).attr('id');
@@ -83,10 +80,10 @@ function createArticleModal(){
                                                 +'<p style="font-size:2em;"><b>'+modalFinalPrice+'€</b><p>'
                                             +'</div>'
                                         +'</div>'
-                                        +'<div class="col-6 justify-content-center">'
+                                        +'<div class="col-6">'
                                             +'<h5 id="'+modalId+'" class="font-weight-bold">' + modalTitle + '</h5>'
                                             +'<hr>'
-                                            +'<p>'+modalDescription+'</p>'
+                                            +'<small class="text-left">'+modalDescription+'</small>'
                                         +'</div>'
                                     +'</div>'
                                     +'<div class="row m-2 my-2 justify-content-center">'
@@ -133,3 +130,26 @@ function searchArticleinArray(article){
     }
     return i;
 };
+//cette fonction met a jour le contenu de la page panier
+function updateCartModal(){
+    //on vide l'affichage du contenu du panier
+    $('#articlesPanier').empty();
+    // si le panier est vide on affiche que le panier est vide
+    if ( cart.length<1 ){
+        var content='<p class="text-center">Votre panier est vide</p>';
+        $('#articlesPanier').append(content);
+    }else{
+        var content='';
+        content+='<ul>';
+        // for (var i=0;i<cart.length;i+=2){
+        //     let tmpArt=searchArticleinArray(cart[i]);
+        //     let tmpName=articlesList[art][2];  //je recupere le nom de l'article
+        //     let tmpPrice=articlesList[art][4];  //je recupere le prix de l'article
+        //     let tmpFinalPrice=articlesList[art][5];  //je recupere le prix final
+        //     let tmpQuantity=cart[i+1];  //je recupere le nombre d'articles
+        //     content+='<li>'+'test'+'</li>';
+        // }
+        // content+='</ul>';
+        $('#articlesPanier').append("<p>bonjour</p>");
+    }
+}
