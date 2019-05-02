@@ -86,3 +86,15 @@ nav .title{
 .minusButton, .plusButton{
     font-size: 1.2em!important;
 }
+.cartbubble{
+    font-size: .7em;
+    font-weight: bold;
+    position: absolute;
+    up:0px;
+}
+.article{
+    transition: .2s ease-in-out;
+}
+.article:hover{
+    opacity: .80;
+}

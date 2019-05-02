@@ -50,7 +50,7 @@ function addToCart(){
             cart.push(articlesList[i][0]);
             cart.push(1);
         }
-        console.log(cart);
+        //j'appelle ma fonction qui met a jour la mise en page du panier
         updateCartModal();
     })
 };
@@ -173,6 +173,15 @@ function updateCartModal(){
         $('#resumeCommande').append(content);
     }
     changeQuantities();
+    //je supprime les icones bulles des paniers
+    $('.cartbubble').remove();
+    //pour chaque icone de panier j'ajoute une info bulle indiquant le nombre d'articles
+    $('.iconePanier').each(function(){
+        if ( cart.length >0){
+            tmpBubble='<small class="cartbubble">'+articleCount+'</small>';
+            $(this).after(tmpBubble);
+        }
+    });
 }
 //cette fonction permet de changer les quantités dans le panier
 function changeQuantities(){
