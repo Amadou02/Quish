@@ -214,7 +214,7 @@ function validateCart(){
         if (articleCount<1){
             alert("Votre panier est vide.\nNous savons que vous avez essayé juste pour voir si ce cas de figure était prévu.\nPetit malin.");
         }else{
-            alert("Félicitation, vous avez encore dépensé pour "+totalPrice+"€.\nGrace à votre soutien, "+ (totalPrice/10).toFixed() + " bébés chats seront sacrifiés et " + (totalPrice/20).toFixed() + " ours polaires seront sauvés.");
+            alert("Félicitation, vous avez encore dépensé pour "+totalPrice.toFixed(2)+"€.\nGrace à votre soutien, "+ (totalPrice/10).toFixed() + " bébés chats seront sacrifiés et " + (totalPrice/20).toFixed() + " ours polaires seront sauvés.");
         }
     });
 }
