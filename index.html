@@ -61,7 +61,7 @@
                     </a>
                     <form class="form-inline">
                         <i class="fas fa-search mx-1"></i>
-                        <input class="form-control mx-1" type="search" placeholder="Que voulez vous acheter aujourd'hui?" aria-label="Search">
+                        <input class="form-control mx-1" type="search" placeholder="Error 404" aria-label="Search">
                         <button class="btn bgc1 my-2 txc4">Rechercher</button>
                     </form>
                     <span>
@@ -97,7 +97,7 @@
     <div class="container px-0 px-md-5">
         <main>
             <!-- banniere promo -->
-            <section id="banner" class="p-3 mb-2">
+            <section id="banner" class="p-3 mb-4">
                 <h3 class="font-weight-bold">Dépensez encore plus!</h3>
                 <p>- 50 % supplémentaire avec ce code:
                     <button id="promoButton" class="btn bgc1 shadow" value="Promo">Promo</button>
@@ -106,7 +106,7 @@
             </section>
             <!-- Modal Panier-->
             <div class="modal" id="modalPanier" tabindex="-1" role="dialog" aria-labelledby="modalPanierLabel" aria-hidden="true">
-                <div class="h-100 modal-dialog modal-dialog-scrollable" role="document">
+                <div class="h-100 modal-dialog modal-dialog-scrollable modal-lg" role="document">
                     <div class="modal-content bgc3">
                         <div class="modal-body ">
                             <h3 class="text-center font-weight-bold">Votre panier</h3>
@@ -135,7 +135,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn bgc1 txc4 shadow" data-dismiss="modal">Commander</button>
+                            <button id="validateCart" type="button" class="btn bgc1 txc4 shadow">Commander</button>
                             <button type="button" class="btn bgc6 txc4 shadow" data-dismiss="modal"><small>Continuez vos achats</small></button>
                         </div>
                     </div>

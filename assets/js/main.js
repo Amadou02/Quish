@@ -1,4 +1,4 @@
-var totalPrice , articleCount;
+var totalPrice=0 , articleCount=0;
 //créé la liste cart qui correspond au contenu du panier
 var cart=[];
 //on créé une liste de tous les articles de la page,
@@ -10,6 +10,7 @@ $(document).ready(function(){
     createArticleModal();
     switchCategories();
     updateCartModal();
+    validateCart();
 });
 //cette fonction cree la liste des articles de la page
 function createArticlesList(){
@@ -204,5 +205,16 @@ function changeQuantities(){
         let art=$(this).attr('class').split(" ")[1];
         cart[art]++;
         updateCartModal();
+    });
+}
+function validateCart(){
+    //si j'appuie sur le bouton valider panier
+    $('#validateCart').click(function(){
+        //si mon panier est vide
+        if (articleCount<1){
+            alert("Votre panier est vide.\nNous savons que vous avez essayé juste pour voir si ce cas de figure était prévu.\nPetit malin.");
+        }else{
+            alert("Félicitation, vous avez encore dépensé pour "+totalPrice+"€.\nGrace à votre soutien, "+ (totalPrice/10).toFixed() + " bébés chats seront sacrifiés et " + (totalPrice/20).toFixed() + " ours polaires seront sauvés.");
+        }
     });
 }
