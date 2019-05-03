@@ -38,12 +38,69 @@
     color: #afc7d1; /*gris*/
 }
 .txc7{
-    color: #635e5e; 
+    color: #635e5e;
 }
-#Panier {
-  width: 100%;
-
-};
 .Jh1 {
   font-size: 15px;
 };
+/* css seb */
+@font-face {
+    font-family: Montel;
+    src: url('../font/Montel.ttf');
+}
+#navbarSticky .navbar-toggler-icon {
+background-image: url('https://mdbootstrap.com/img/svg/hamburger7.svg?color=fff');
+}
+a{
+    color: inherit;
+}
+a:link{
+    text-decoration: none;
+}
+nav .title{
+    font-family: Montel;
+}
+.grow{
+    transition: .2s ease-in-out;
+}
+.grow:hover{
+    transform: scale(1.2);
+}
+#banner{
+     height:158px;
+     background-image: url(../img/banner.jpg);
+     background-position: right;
+     background-size: cover;
+}
+.articleName{
+    font-weight: bold;
+}
+.article:hover{
+    cursor: pointer;
+}
+#articlesPanier p, #resumeCommande p{
+    font-size: .8em;
+    margin-bottom: 0px;
+}
+#articlesPanier button{
+    transform: scale(.7);
+    font-size: 1.2em;
+}
+#totalPrice{
+    font-size: 2em!important;
+}
+.minusButton, .plusButton{
+    font-size: 1.2em!important;
+}
+.cartbubble{
+    font-size: .7em;
+    font-weight: bold;
+    position: absolute;
+    up:0px;
+}
+.article{
+    transition: .2s ease-in-out;
+}
+.article:hover{
+    opacity: .80;
+}
