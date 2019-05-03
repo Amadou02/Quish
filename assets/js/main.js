@@ -89,9 +89,10 @@ function createArticleModal(){
                                         +'</div>'
                                     +'</div>'
                                     +'<div class="row m-2 my-2 justify-content-center">'
-                                        +'<button id="addToCartButton" class="btn bgc1 txc4 mx-1 shadow">Ajouter au panier</button>'
+                                        +'<button id="addToCartButton" class="btn bgc1 txc4 mx-1 shadow" data-toggle="tooltip" data-placement="top" title="Article ajouté au panier">Ajouter au panier</button>'
                                         +'<button class="btn bgc6 mx-1 shadow" data-dismiss="modal">Continuer mes achats</button>'
                                     +'</div>'
+                                    +'<small class="alert alert-success" id="popupAjout"><strong>'+modalTitle+'</strong> a bien été ajouté au panier.</small>'
                                 +'</div>\
                             </div>\
                         </div>');
@@ -99,6 +100,11 @@ function createArticleModal(){
         $('#articleModal').remove();
         $(this).after(modal);
         $('#articleModal').modal('toggle');
+        //je cache le popupAjout et je lui colle un addEventListener
+        $("#popupAjout").hide();
+        $("#addToCartButton").click(function showAlert() {
+            $("#popupAjout").show().delay(1000).fadeOut(1000);
+        });
         addToCart();
     });
 }
@@ -214,7 +220,7 @@ function validateCart(){
         if (articleCount<1){
             alert("Votre panier est vide.\nNous savons que vous avez essayé juste pour voir si ce cas de figure était prévu.\nPetit malin.");
         }else{
-            alert("Félicitation, vous avez encore dépensé pour "+totalPrice.toFixed(2)+"€.\nGrace à votre soutien, "+ (totalPrice/10).toFixed() + " bébés chats seront sacrifiés et " + (totalPrice/20).toFixed() + " ours polaires seront sauvés.");
+            alert("Félicitation, vous avez encore dépensé pour "+totalPrice+"€.\nGrace à votre soutien, "+ (totalPrice/10).toFixed() + " bébés chats seront sacrifiés et " + (totalPrice/20).toFixed() + " ours polaires seront sauvés.");
         }
     });
 }
