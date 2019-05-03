@@ -74,6 +74,7 @@ nav .title{
 }
 .articleName{
     font-weight: bold;
+    font-size: .8em;
 }
 .article:hover{
     cursor: pointer;
@@ -103,4 +104,14 @@ nav .title{
 }
 .article:hover{
     opacity: .80;
+}
+footer h5{
+  font-size: .9em;
+}
+footer a{
+  font-size: .8em;
+}
+footer{
+  margin: 0px;
+  padding: 0px;
 }
